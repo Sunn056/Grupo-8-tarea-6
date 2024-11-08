@@ -1,4 +1,5 @@
 //Superclase persona, hecho por Edwin Pineda
+
 public class Persona {
 
     private String nombre;
