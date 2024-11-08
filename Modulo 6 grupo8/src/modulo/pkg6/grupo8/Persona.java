@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
+//Superclase Persona
 public class Persona {
 
-    // Atributos comunes a todas las personas
     private String nombre;
     private int edad;
     private String genero;
 
-    // Método para capturar datos personales
     public void capturarDatosPersonales() {
         Scanner scanner = new Scanner(System.in);
 
@@ -23,7 +22,6 @@ public class Persona {
         this.genero = scanner.nextLine();
     }
 
-    // Métodos getter para obtener los valores de los atributos
     public String getNombre() {
         return nombre;
     }
@@ -36,7 +34,6 @@ public class Persona {
         return genero;
     }
 
-    // Método para mostrar ocupación
     public void mostrarOcupacion() {
         System.out.println("Ocupación desconocida");
     }
@@ -45,11 +42,9 @@ public class Persona {
     public static class Doctor extends Persona {
         private String especialidad;
 
-        // Método específico para capturar datos del Doctor
         public void capturarDatosDoctor() {
             Scanner scanner = new Scanner(System.in);
 
-            // Capturar datos generales
             super.capturarDatosPersonales();
 
             System.out.print("Ingrese la especialidad del doctor: ");
@@ -70,11 +65,9 @@ public class Persona {
     public static class Deportista extends Persona {
         private String deporte;
 
-        // Método específico para capturar datos del Deportista
         public void capturarDatosDeportista() {
             Scanner scanner = new Scanner(System.in);
 
-            // Capturar datos generales
             super.capturarDatosPersonales();
 
             System.out.print("Ingrese el deporte que practica: ");
@@ -91,9 +84,8 @@ public class Persona {
         }
     }
 
-    // Método main para probar el código
+//Main
     public static void main(String[] args) {
-        // Crear y capturar datos para un Doctor
         Doctor doctor = new Doctor();
         doctor.capturarDatosDoctor();
         System.out.println("Nombre: " + doctor.getNombre());
@@ -103,7 +95,6 @@ public class Persona {
 
         System.out.println();
 
-        // Crear y capturar datos para un Deportista
         Deportista deportista = new Deportista();
         deportista.capturarDatosDeportista();
         System.out.println("Nombre: " + deportista.getNombre());
